@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How QA Scoring Works</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2E6DB5 0%, #1e4d7b 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #2d3748;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+        
+        .step-card {
+            background: #f7fafc;
+            border-left: 5px solid #2E6DB5;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .step-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(46, 109, 181, 0.3);
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: #2E6DB5;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.2em;
+        }
+        
+        .step-title {
+            color: #2d3748;
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .step-description {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-left: 50px;
+        }
+        
+        .example-box {
+            background: linear-gradient(135deg, #2E6DB5 0%, #1e4d7b 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+        
+        .example-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .calculation {
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .calc-line {
+            font-size: 1.1em;
+            margin: 10px 0;
+            line-height: 1.8;
+        }
+        
+        .highlight {
+            background: rgba(255,255,255,0.3);
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .result {
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+        }
+        
+        .reset-note {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+        
+        .reset-note strong {
+            color: #92400e;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 How QA Scoring Works</h1>
+        <p class="subtitle">Understanding your quality score, step by step</p>
+        
+        <div class="step-card">
+            <div class="step-title">
+                <span class="step-number">1</span>
+                Each Task Has Points
+            </div>
+            <div class="step-description">
+                Each of the 15 tasks has a <strong>weighted point value</strong> based on its importance. Successfully completing a task earns you those points.
+            </div>
+        </div>
+        
+        <div class="step-card">
+            <div class="step-title">
+                <span class="step-number">2</span>
+                Calculate Your Job Score
+            </div>
+            <div class="step-description">
+                After your depo is reviewed:<br>
+                <strong>Earned Points ÷ 100 Possible Points = Your Job Percentage</strong>
+            </div>
+        </div>
+        
+        <div class="step-card">
+            <div class="step-title">
+                <span class="step-number">3</span>
+                Monthly Average
+            </div>
+            <div class="step-description">
+                Your job percentages are averaged monthly to give you your overall quality score. This monthly average is what appears on your performance reports.
+            </div>
+        </div>
+        
+        <div class="example-box">
+            <div class="example-title">🧮 Example Calculation</div>
+            <div class="calculation">
+                <div class="calc-line">
+                    <strong>Scenario:</strong> You miss two tasks on a deposition
+                </div>
+                <div class="calc-line">
+                    • Task 1 missed: <span class="highlight">6 points</span>
+                </div>
+                <div class="calc-line">
+                    • Task 2 missed: <span class="highlight">10 points</span>
+                </div>
+                <div class="calc-line">
+                    • Total points missed: <span class="highlight">16 points</span>
+                </div>
+                <div class="calc-line">
+                    • Points earned: <span class="highlight">100 - 16 = 84 points</span>
+                </div>
+            </div>
+            
+            <div class="result">
+                84 ÷ 100 = 84% for that job
+            </div>
+        </div>
+        
+        <div class="reset-note">
+            <strong>⏰ Important:</strong> Scores reset at the beginning of each month. This gives everyone a fresh start and ensures your recent performance is what matters most.
+        </div>
+    </div>
+</body>
+</html>
