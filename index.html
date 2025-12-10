@@ -22,7 +22,7 @@
         }
         
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             background: white;
             border-radius: 20px;
             padding: 40px;
@@ -43,17 +43,23 @@
             font-size: 1.1em;
         }
         
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
         .step-card {
             background: #f7fafc;
             border-left: 5px solid #2E6DB5;
-            padding: 25px;
-            margin-bottom: 20px;
+            padding: 20px;
             border-radius: 10px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .step-card:hover {
-            transform: translateX(5px);
+            transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(46, 109, 181, 0.3);
         }
         
@@ -67,13 +73,13 @@
             text-align: center;
             line-height: 35px;
             font-weight: bold;
-            margin-right: 15px;
+            margin-right: 10px;
             font-size: 1.2em;
         }
         
         .step-title {
             color: #2d3748;
-            font-size: 1.3em;
+            font-size: 1.2em;
             font-weight: 600;
             margin-bottom: 10px;
         }
@@ -81,7 +87,7 @@
         .step-description {
             color: #4a5568;
             line-height: 1.6;
-            margin-left: 50px;
+            font-size: 0.95em;
         }
         
         .example-box {
@@ -147,36 +153,38 @@
 <body>
     <div class="container">
         <h1>📊 How QA Scoring Works</h1>
-        <p class="subtitle">Understanding your quality score, step by step</p>
+        <p class="subtitle">Understanding how you'll calculate quality scores as a QA auditor</p>
         
-        <div class="step-card">
-            <div class="step-title">
-                <span class="step-number">1</span>
-                Each Task Has Points
+        <div class="steps-container">
+            <div class="step-card">
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    Each Task Has Points
+                </div>
+                <div class="step-description">
+                    Each of the 15 tasks has a <strong>weighted point value</strong> based on its importance. When you review a job, you'll check if each task was completed successfully and award points accordingly.
+                </div>
             </div>
-            <div class="step-description">
-                Each of the 15 tasks has a <strong>weighted point value</strong> based on its importance. Successfully completing a task earns you those points.
+            
+            <div class="step-card">
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    Calculate the Videographer's Job Score
+                </div>
+                <div class="step-description">
+                    After you complete your review:<br>
+                    <strong>Earned Points ÷ 100 Possible Points = Videographer's Job Percentage</strong>
+                </div>
             </div>
-        </div>
-        
-        <div class="step-card">
-            <div class="step-title">
-                <span class="step-number">2</span>
-                Calculate Your Job Score
-            </div>
-            <div class="step-description">
-                After your depo is reviewed:<br>
-                <strong>Earned Points ÷ 100 Possible Points = Your Job Percentage</strong>
-            </div>
-        </div>
-        
-        <div class="step-card">
-            <div class="step-title">
-                <span class="step-number">3</span>
-                Monthly Average
-            </div>
-            <div class="step-description">
-                Your job percentages are averaged monthly to give you your overall quality score. This monthly average is what appears on your performance reports.
+            
+            <div class="step-card">
+                <div class="step-title">
+                    <span class="step-number">3</span>
+                    Monthly Average
+                </div>
+                <div class="step-description">
+                    The videographer's job percentages are averaged monthly to give them their overall quality score. This monthly average is what appears on their performance reports.
+                </div>
             </div>
         </div>
         
@@ -184,7 +192,7 @@
             <div class="example-title">🧮 Example Calculation</div>
             <div class="calculation">
                 <div class="calc-line">
-                    <strong>Scenario:</strong> You miss two tasks on a deposition
+                    <strong>Scenario:</strong> A videographer misses two tasks on a deposition
                 </div>
                 <div class="calc-line">
                     • Task 1 missed: <span class="highlight">6 points</span>
@@ -201,12 +209,12 @@
             </div>
             
             <div class="result">
-                84 ÷ 100 = 84% for that job
+                84 ÷ 100 = 84% for that videographer's job
             </div>
         </div>
         
         <div class="reset-note">
-            <strong>⏰ Important:</strong> Scores reset at the beginning of each month. This gives everyone a fresh start and ensures your recent performance is what matters most.
+            <strong>⏰ Important:</strong> Videographer scores reset at the beginning of each month. This gives everyone a fresh start and ensures recent performance is what matters most for their reviews.
         </div>
     </div>
 </body>
